@@ -1,0 +1,25 @@
+---
+title: "lab4_part2_po"
+author: "Peter Omasta"
+date: "10/22/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is going to be the new r markdown file for my new proejct that I am working on as a part of the second part of the forth lab for ESM 206. We will create a graph and a table in this document. 
+
+-Interactive Plots: (plotly)
+- Interactive tables: (DT)
+
+
+```{r}
+#here is some text that I put in here to attach packages
+
+library(tidyverse)
+library(tidyr)
+library(plotly)
+```
+
