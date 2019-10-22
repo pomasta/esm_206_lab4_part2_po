@@ -76,6 +76,18 @@ ggplotly(iris_graph2)
 ```
 
 
+That was a great stopping point, we already saved them to github so we can continue. Time for an interactive table using DT.
+
+We wil be using the msleep file.
+
+```{r}
+
+datatable(msleep)
+```
+
+
+
+
 
 
 
