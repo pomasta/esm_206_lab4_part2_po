@@ -7,6 +7,6 @@
 - Bullet
 - Points
 
-And other **useful information!
+And other **useful information!**
 
-*yay!
+*yay!*
