@@ -15,11 +15,67 @@ This is going to be the new r markdown file for my new proejct that I am working
 - Interactive tables: (DT)
 
 
-```{r}
+```{r, message = FALSE, include=FALSE}
 #here is some text that I put in here to attach packages
 
 library(tidyverse)
 library(tidyr)
 library(plotly)
+library(DT)
+library(janitor)
 ```
+
+Next we are going to read in the disease_burden.csv file to work on getting the data wrangled to create a graph and table that are interactive. 
+
+```{r}
+
+disease <- read_csv("disease_burden.csv")
+
+#I want to clean this up with the janitor package. 
+
+diseaseclean <- disease %>% 
+  clean_names()
+```
+
+#The lab went a different direction than I thought, now I will be reading in the iris data set. This is a famous data set created by Edgar Anderson. 
+
+
+```{r, echo=FALSE, include = FALSE}
+
+iris_graph <- ggplot(data=iris, aes(x=Petal.Width,
+                                    y= Petal.Length)) +
+  geom_point()
+
+iris_graph
+
+#Does not lok great so lets make some aesthetic updates
+```
+
+
+
+```{r}
+iris_graph2 <- ggplot(data=iris, aes(x=Petal.Width,
+                                    y= Petal.Length)) +
+  geom_point(aes(size= Sepal.Width,
+                 color= Species),
+             alpha=0.5) +
+  theme_minimal() +
+  labs(x= "Petal width (cm)",
+       y= "Petal length (cm)",
+       title = "Relationship of Petal Length and Width by Iris Species")
+
+#iris_graph2
+
+#Now we will make this an interactive plot by using ggplotly on this saved graph
+
+ggplotly(iris_graph2)
+
+#Super cool, can zoom in or out. Points are highlighted. 
+
+
+```
+
+
+
+
 
